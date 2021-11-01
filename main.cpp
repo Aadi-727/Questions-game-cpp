@@ -34,10 +34,8 @@ void question(string, string, string, string, string, int);
 int main()
 {
 
-  while (QUESTIONS_LEFT != 0)
-
-    askQuestion();
-  cout << "Game Ended\n "
+  askQuestion();
+  cout << "Game Ended\n"
        << "Your Final Score : " << CURRENT_SCORE << endl;
 
   return 0;
@@ -86,18 +84,20 @@ void question(string question, string op1, string op2, string op3, string op4, i
   cout << "Option 2: " << opt.op2 << endl;
   cout << "Option 3: " << opt.op3 << endl;
   cout << "Option 4: " << opt.op4 << endl;
-
+  cout << "\n"
+       << endl;
+  cout << "Enter the correct option: ";
   cin >> USER_CHOICE;
 
   if (USER_CHOICE == q.answer)
   {
-    cout << "You got it! :((\n"
+    cout << "\nYou got it! :((\n"
          << endl;
     CURRENT_SCORE++;
   }
   else
   {
-    cout << "Oh! you missed it! :))\n " << endl;
+    cout << "\nOh! you missed it! :))\n " << endl;
   }
   QUESTIONS_LEFT--;
   QUESTION_NO++;
